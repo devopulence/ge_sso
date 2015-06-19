@@ -1,0 +1,6 @@
+HostConfigFile="<%= node['siteminder']['host']['dir'] %>/<%= node['siteminder']['host']['file'] %>"
+AgentConfigObject="<%= node['apache']['config_object'] %>"
+EnableWebAgent="YES"
+ServerPath="<%= node['apache']['installation']['dir'] %>/conf"
+localconfigfile="<%= node['apache']['installation']['dir'] %>/conf/LocalConfig.conf"
+LoadPlugin="<%= node['webagent']['install_dir'] %>/bin/libHttpPlugin.so"

@@ -1,0 +1,5 @@
+[gerrit]
+host=emeril.frictionless.capital.ge.com
+port=29418
+project=ge_sso
+defaultbranch=master

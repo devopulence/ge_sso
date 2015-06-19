@@ -1,0 +1,28 @@
+---
+driver_plugin: vagrant
+platforms:
+- name: centos-6.4-selinux
+  driver_config:
+    box: ge-rhel63-x86-64
+    box_url: http://3.166.220.28/virtualbox/ge-rhel63-x86-64.box
+    http_proxy: <%= ENV['http_proxy'] %>
+    https_proxy: <%= ENV['https_proxy'] %>
+    network:
+            - ["forwarded_port", {guest: 80, host: 8080}]
+            - ["forwarded_port", {guest: 443, host: 8443, auto_correct: true}]
+suites:
+- name: default
+  run_list:
+  #- recipe[ge_sso]
+  - recipe[ge_sso::test_ge_sso]
+  attributes: {}
+
+
+#
+# Uncomment these lines to run the test_ge_sso recipe
+# This is really here for LWRP cookbooks that need a resource to be instantiated for functional tests
+# - name: test_lwrps
+#   run_list:
+#   - recipe[ge_sso]
+#   - recipe[ge_sso::test_ge_sso]
+#   attributes: {}

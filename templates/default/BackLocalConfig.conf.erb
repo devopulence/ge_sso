@@ -1,0 +1,92 @@
+#
+# LocalConfig.conf - sample local configuration file for SiteMinder Web Agents
+#
+# Make a copy of this file and modify that copy with desired local configuration settings.
+# '#' is used as a comment character at the beginning of a line.  Values commented out
+# can be uncommented once proper values are specified.  Many such values in this
+# sample file are verbose explanations of what values should be used and not the
+# values themselves.  To uncomment a line simply remove the '#' from the beginning
+# of the line.
+#
+# Most parameters in this file are also valid in an Agent Configuration Object.
+# The exceptions are AgentConfigObject, EnableWebAgent, and HostConfigFile.
+#
+AcceptTPCookie="NO"
+AgentName="<%= node['apache']['agent_name'] %>"
+#BadCSSChars="<,>,',;"
+#BadQueryChars=""
+BadUrlChars="//,./,/.,/*,*.,~,\,%00-%1f,%7f-%ff,%25"
+#BadFormChars="<,>,&,%22"
+CacheAnonymous="NO"
+CCCExt=".ccc"
+CookieDomain=""
+CookieDomainScope="0"
+#CookieProvider="<cookie provider URL>"
+  CSSChecking="YES"
+  #CSSErrorFile="<File path to error text, or URL to redirect to>"
+  DecodeQueryData="NO"
+  DefaultAgentName="eService_Savvis_Agents"
+  DisableAuthSrcVars="NO"
+  DisableDotDotRule=NO
+  DisableSessionVars="NO"
+  DisableUserNameVars="NO"
+  EnableAuditing="NO"
+  EnableFormCache="YES"
+  EnableMonitoring="NO"
+  EnforceRealmTimeouts="NO"
+  #ExpireForProxy="NO"
+  FccCompatMode="NO"
+  FCCExt=".fcc"
+  FCCForceIsProtected="YES"
+  ForceCookieDomain="NO"
+  ForceFQHost="NO"
+  #ForceIISProxyUser="NO"                         IIS ONLY
+  FormCacheTimeout="600"
+  HTTPHeaderEncodingSpec=""
+  IgnoreExt=".ccc"
+  IgnoreQueryData="NO"
+  #IgnoreHost="<HOST to ignore, i.e. myserver.company.org>"
+  #IgnoreUrl="<URL to ignore>"
+  LegacyVariables="NO"
+  LogAppend="NO"
+  LogFile="YES"
+  LogFileName="<%= node['apache']['installation']['dir'] %>/logs/smlog/webagent.log"
+  loglevel="2"
+  LegacyEncoding="YES"
+  LogOffUri="/portal/site/eserviceCH/logout"
+  MaxResourceCacheSize="700"
+  MaxSessionCacheSize="700"
+  MaxUrlSize="4096"
+  NTCExt=".ntc"
+  OverrideIgnoreExtFilter=""
+  #P3PCompactPolicy=""                            IIS ONLY
+  PersistentCookies="NO"
+  PersistentIPCheck="YES"
+  PreserveHeaders="NO"
+  #ProxyAgent="NO"                                Apache 2.0 ONLY
+  ProxyTrust="NO"
+  #ProxyTimeout="NO"                              Apache 2.0 ONLY
+  PSPollInterval="30"
+  RemoteUserVar=""
+  #ReqCookieErrorFile="<File path to error text, or URL to redirect to>"
+  RequireCookies="YES"
+  ResourceCacheTimeout="600"
+  SaveCredsTimeout="720"
+  SCCExt=".scc"
+  #ServerErrorFile="<File path to error text, or URL to redirect to>"
+  SessionGracePeriod="30"
+  SessionUpdatePeriod="60"
+  SetRemoteUser="NO"
+  SFCCExt=".sfcc"
+  SSOZoneName="SM"
+  SSOTrustedZone="SM"
+  TraceAppend="NO"
+  TraceConfigFile="<%= node.default['siteminder']['host']['dir'] %>/WebAgentTrace.conf"
+  TraceFile="YES"
+  TraceFileName="<%= node['apache']['installation']['dir'] %>/logs/smlog/webagenttrace.log"
+  TraceFileSize="100"
+  TraceFormat="default"
+  TransientIDCookies="NO"
+  TransientIPCheck="NO"
+  #UseAnonAccess="NO"                             IIS ONLY
+  UseSecureCookies="NO"
